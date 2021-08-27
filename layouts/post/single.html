@@ -4,18 +4,6 @@
       {{ .Title }}
     </h1>
 
-    <div class="date">
-      {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
-      {{ $publishDate := .PublishDate }}
-      <strong>{{ T "publish_date" }} </strong>{{ $publishDate.Format $dateFormat }}
-      {{ with .Lastmod }}
-        {{ if gt . $publishDate }}
-          <br>
-          <strong>{{ T "last_updated" }} </strong>{{ .Format $dateFormat }}
-        {{ end }}
-      {{ end }}
-    </div>
-
     {{ with .Params.tags }}
       <div class="tags">
         <strong>{{ T "tags" }} </strong>
@@ -38,6 +26,17 @@
     {{ end }}
 
     {{ .Content }}
+
+    <div class="date">
+      {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+      {{ $publishDate := .PublishDate }}
+      This post came to life in {{ $publishDate.Format "Jan 2006" }}
+      {{ with .Lastmod }}
+        {{ if gt . $publishDate }}
+        and was last updated {{ .Format $dateFormat }}.
+        {{ end }}
+      {{ end }}
+    </div>
   </main>
   {{ partial "disqus.html" . }}
 {{ end }}
