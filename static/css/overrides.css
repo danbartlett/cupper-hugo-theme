@@ -1,11 +1,33 @@
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+/* Reduce default font size and prefer Helvetica Neue over Arial, where available */
+html {
+  font-size: calc(1em + 0.22vw);
+  font-family: 'Helvetica Neue', Arial, sans-serif;  
+}
+
 /* Center tagline in left nav */
 .library-desc {
   text-align: center;
 }
 
-/* Publish/updated dates at bottom of post */
+/* 'Published/updated at' dates at bottom of post */
 .date {
   margin-top: 4em;
   text-align: center;
   font-style: italic;
+}
+
+/* Tags at top of posts */
+main .tags {
+  margin-top: 0.5em;
+}
+
+/* Fix inline footnotes cocking up line-heights of paragraph text */
+sup { 
+  vertical-align: top; 
+  font-size: 0.6em; 
 }
