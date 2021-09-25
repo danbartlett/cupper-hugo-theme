@@ -1,12 +1,14 @@
 h1, h2, h3, h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
+  color: #343a40;
 }
 
 /* Reduce default font size and prefer Helvetica Neue over Arial, where available */
 html {
   font-size: calc(1em + 0.22vw);
-  font-family: 'Helvetica Neue', Arial, sans-serif;  
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #495057;
 }
 
 /* Email signup prompt on homepage */
@@ -36,7 +38,7 @@ main .tags {
 
 /* Fix inline footnotes cocking up line-heights of paragraph text */
 sup { 
-  vertical-align: top; 
+  vertical-align: top;
   font-size: 0.6em; 
 }
 
